@@ -13,7 +13,7 @@
 
 
 ### Route for accessing details 
-[http://localhost/schoolboard/app/students.php?student=[student_id]]
+http://localhost/schoolboard/app/students.php?student=[student_id]
 
 
 ### SQL dump
