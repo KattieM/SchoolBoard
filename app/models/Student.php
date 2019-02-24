@@ -74,4 +74,19 @@ class Student
     }
 
 
+
+    public function returnOne($id)
+    {
+        $query = "SELECT s.id,
+        s.name,
+        b.board_name,
+        (SELECT GROUP_CONCAT(grade SEPARATOR \",\") FROM grades WHERE student_id =".$id.") AS grades,
+        (SELECT avg(grade) as average from grades where student_id =".$id.") as average,
+        (case WHEN b.board_name=\"CSM\" THEN CASE when (SELECT AVG(grade) FROM grades WHERE student_id =".$id.")>=7 then 'pass' else 'fail' END ELSE case when(SELECT MAX(grade) FROM grades WHERE student_id =".$id.")>=8 then 'pass' else 'fail' end END) as finalresult FROM students s JOIN boards b on s.board_id = b.id WHERE s.id=".$id;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    
 }
