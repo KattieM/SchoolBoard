@@ -11,19 +11,12 @@
 ### Config for database connection
 [app/config/Database.php](app/config/Database.php)
 
-### Communication between view and controller (ajax) 
-[public/js/custom.js](public/js/custom.js)
 
-### Controller 
-[app/Http/Controllers/PostCodeController.php](app/Http/Controllers/PostCodeController.php)
+### Route for accessing details 
+[http://localhost/schoolboard/app/students.php?student=[student_id]]
 
-### Routes 
-[routes/web.php](routes/web.php)
 
 ### SQL dump
-[houseswap.sql](houseswap.sql)
+[schoolboard.sql](schoolboard.sql)
 
-### Additional packages
-* [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
-* [maatwebsite/excel](https://laravel-excel.maatwebsite.nl/)
  
